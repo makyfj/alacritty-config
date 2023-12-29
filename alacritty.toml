@@ -1,32 +1,55 @@
-# alacritty.toml
-
 live_config_reload = true
+working_directory = "None"
 
-[env]
-TERM = "alacritty"
+[colors]
+draw_bold_text_with_bright_colors = true
 
-[window]
-decorations     = "none"
-dynamic_padding = false
-dynamic_title   = true
-opacity         = 1.0
-startup_mode    = "Maximized"
-title           = "Alacritty"
+# Colors (Ayu Dark)
 
-[window.dimensions]
-columns = 0
-lines   = 0
+# Default colors
+[colors.primary]
+background = '#0A0E14'
+foreground = '#B3B1AD'
 
-[window.padding]
-x = 12
-y = 12
+# Normal colors
+[colors.normal]
+black = '#01060E'
+red = '#EA6C73'
+green = '#91B362'
+yellow = '#F9AF4F'
+blue = '#53BDFA'
+magenta = '#FAE994'
+cyan = '#90E1C6'
+white = '#C7C7C7'
 
-[scrolling]
-history = 12000
+# Bright colors
+[colors.bright]
+black = '#686868'
+red = '#F07178'
+green = '#C2D94C'
+yellow = '#FFB454'
+blue = '#59C2FF'
+magenta = '#FFEE99'
+cyan = '#95E6CB'
+white = '#FFFFFF'
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[debug]
+log_level = "Warn"
+persistent_logging = false
+print_events = false
+render_timer = false
 
 [font]
-size = 14.0
+size = 13.0
 builtin_box_drawing = false
+
+[font.glyph_offset]
+x = 0
+y = 0
 
 [font.bold]
 family = "MesloLGS NF"
@@ -44,124 +67,63 @@ style = "Italic"
 family = "MesloLGS NF"
 style = "Regular"
 
-[font.glyph_offset]
-x = 0
-y = 0
-
 [font.offset]
 x = 0
 y = 0
 
-[colors.primary]
-background = "#232323"
-foreground = "#C0C5CE"
-
-[colors.bright]
-black   = "#5C5C5C"
-blue    = "#6699CC"
-cyan    = "#5FB3B3"
-green   = "#A6BC99"
-magenta = "#824F82"
-red     = "#E57373"
-white   = "#F3F4F5"
-yellow  = "#FAC863"
-
-[colors.cursor]
-cursor = "CellForeground"
-text   = "CellBackground"
-
-[colors.footer_bar]
-background = "#C0C5CE"
-foreground = "#232323"
-
-[colors.hints.end]
-background = "CellBackground"
-foreground = "CellForeground"
-
-[colors.hints.start]
-background = "CellBackground"
-foreground = "CellForeground"
-
-[colors.line_indicator]
-background = "None"
-foreground = "None"
-
-[colors.normal]
-black   = "#232323"
-blue    = "#6699CC"
-cyan    = "#5FB3B3"
-green   = "#A6BC99"
-magenta = "#824F82"
-red     = "#E57373"
-white   = "#C0C5CE"
-yellow  = "#FAC863"
-
-[colors.search.focused_match]
-background = "CellBackground"
-foreground = "CellForeground"
-
-[colors.search.matches]
-background = "CellBackground"
-foreground = "CellForeground"
-
-[colors.selection]
-background = "CellForeground"
-text       = "CellBackground"
-
-[colors.vi_mode_cursor]
-cursor = "CellForeground"
-text   = "CellBackground"
-
-[bell]
-animation = "EaseOutExpo"
-color     = "#C0C5CE"
-command   = "None"
-duration  = 0
-
-[selection]
-save_to_clipboard     = false
-semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
-
-[cursor]
-unfocused_hollow = true
-vi_mode_style    = "None"
-
 [[keyboard.bindings]]
 action = "Paste"
-key    = "V"
-mods   = "Control|Shift"
+key = "V"
+mods = "Control|Shift"
 
 [[keyboard.bindings]]
 action = "Copy"
-key    = "C"
-mods   = "Control|Shift"
+key = "C"
+mods = "Control|Shift"
 
 [[keyboard.bindings]]
 action = "ScrollPageUp"
-key    = "PageUp"
-mods   = "Shift"
+key = "PageUp"
+mods = "Shift"
 
 [[keyboard.bindings]]
 action = "ScrollPageDown"
-key    = "PageDown"
-mods   = "Shift"
+key = "PageDown"
+mods = "Shift"
 
 [[keyboard.bindings]]
 action = "ScrollToTop"
-key    = "Home"
-mods   = "Shift"
+key = "Home"
+mods = "Shift"
 
 [[keyboard.bindings]]
 action = "ScrollToBottom"
-key    = "End"
-mods   = "Shift"
+key = "End"
+mods = "Shift"
 
 [mouse]
-hide_when_typing = true
+hide_when_typing = false
 
-[debug]
-highlight_damage   = false
-log_level          = "Warn"
-persistent_logging = false
-print_events       = false
-render_timer       = false
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[shell]
+args = ["-l", "-c", "tmux"]
+program = "/bin/zsh"
+
+[window]
+decorations = "none"
+dynamic_padding = false
+dynamic_title = true
+opacity = 1.0
+startup_mode = "Maximized"
+title = "Alacritty"
+
+[window.padding]
+x = 12
+y = 12
